@@ -1,0 +1,19 @@
+1) download and extract project.zip file
+
+2) create tables in test database using queries given in database.txt file
+
+3) import project in eclipse :-
+
+   file menu --> import - maven - existing maven project - browse and select project's root directory
+
+4) open application.properties file and provide password of your database ( if any )
+
+5) run OnlineExamSpringBootApplication class ( runner class ) . open  OnlineExamSpringBootApplication.java file . then run it as java application
+
+6) open browser & write 
+
+   localhost:8085
+
+7) it will open home page . click on link to register
+
+8) then login into application .

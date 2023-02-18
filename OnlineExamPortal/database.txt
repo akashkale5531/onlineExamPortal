@@ -1,0 +1,37 @@
+
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4 to server version: 5.0.11-beta-nt
+
+Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
+
+mysql> use test;
+Database changed
+
+
+mysql> create table user(name varchar(20) primary key,pass varchar(20));
+Query OK, 0 rows affected (0.75 sec)
+
+mysql> create table question(qno int primary key,qtxt varchar(200),qans varchar(200),opt1 varchar(40),opt2 varchar(20),opt3 varchar(20));
+Query OK, 0 rows affected (0.29 sec)
+
+mysql> insert into question values(1,'what is default value of boolean variable ? ','false','true','false','none of two');
+Query OK, 1 row affected (0.13 sec)
+
+mysql> insert into question values(2,'which variable is available inside all methods ? ','both','static variable','instance variable','both');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into question values(3,'abstraction is achieved in java by  ','both','interface','abstract class','both');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select * from question;
++-----+---------------------------------------------------+-------+-----------------+-------------------+-------------+
+| qno | qtxt                                              | qans  | opt1            | opt2              | opt3        |
++-----+---------------------------------------------------+-------+-----------------+-------------------+-------------+
+|   1 | what is default value of boolean variable ?       | false | true            | false             | none of two |
+|   2 | which variable is available inside all methods ?  | both  | static variable | instance variable | both        |
+|   3 | abstraction is achieved in java by                | both  | interface       | abstract class    | both        |
++-----+---------------------------------------------------+-------+-----------------+-------------------+-------------+
+3 rows in set (0.07 sec)
+
+mysql>

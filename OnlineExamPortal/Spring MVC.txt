@@ -1,0 +1,76 @@
+package com.javabykiran.controller;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+/* controller class controls which web page will be sent to Browser(client)
+  DispatcherServlet is a front controller which manage flow of MVC application
+
+
+ * */
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class WelcomeController  
+{
+
+	// M-model ( data )  . model mean data which will be displayed on a JSP page .
+	// V-view ( jsp pages)
+	// C-controller (simple java class)
+
+	
+	
+	// we will give URL :-   localhost:8082/hello   in a browser . Server will receive this request and gives it to DispatcherServlet . 
+	// DispatcherServlet will search this request URL in controller class .  Once URL is found , dispatcherServlet will call associated 
+	// request handler method . Request handler method will give name of web page and then dispatcherservlet will send this web page to server 
+	// server will send this web page to browser .
+		
+
+	@RequestMapping("hello")
+	public String hello()
+	{
+		return "hello";
+	}
+	
+	@RequestMapping("hi")
+	public String hi()
+	{
+		return "hi";
+	}
+	
+	
+	
+	
+	@RequestMapping("show")
+	ModelAndView show()
+	{
+		ModelAndView  mv = new ModelAndView();
+		
+		mv.setViewName("show");
+		
+		List<String> list=Arrays.asList("Spring","MVC","is","easy");
+		
+		mv.addObject("data",list); // data is model attribute name
+		
+		return mv;
+	}
+
+	
+
+
+
+}
+
+
+
+
+
